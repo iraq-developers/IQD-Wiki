@@ -132,8 +132,7 @@ print("Hello, World!")
 [توزيعات يجب تجنبها]
 (https://www.youtube.com/watch?v=6QMvRwLVuVw)
 
-[kali linux ما هي توزيعة]
-(https://www.youtube.com/watch?v=Vrdj5hHC3bo)
+[kali linux ما هي توزيعة](https://www.youtube.com/watch?v=Vrdj5hHC3bo)
 
 
 **كيف تحول النظام من ويندوز الى لينكس**
@@ -141,11 +140,8 @@ print("Hello, World!")
 
 [fedora linux](https://www.youtube.com/watch?v=PmvG1MC6H3o)
 
-[linux mint]
-(https://www.youtube.com/watch?v=PmvG1MC6H3o)
+[linux mint](https://www.youtube.com/watch?v=PmvG1MC6H3o)
 
-[steam os]
-(https://www.youtube.com/watch?v=x4gZO7TZT9g)
+[steam os](https://www.youtube.com/watch?v=x4gZO7TZT9g)
 
-[Arch linux]
-(https://www.youtube.com/watch?v=AYxaNjbC1wg)
+[Arch linux](https://www.youtube.com/watch?v=AYxaNjbC1wg)
