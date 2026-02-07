@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# How to Edit IQD-Wiki Content
 
-## Getting Started
+This guide explains how to update the wiki content directly from your browser without installing any software.
 
-First, run the development server:
+## 1. Editing an Existing Page
+1. Navigate to the **[Content Folder](https://github.com/iraq-developers/IQD-Wiki/tree/main/content)**.
+2. Click on the file you want to change (files end in `.md` or `.mdx`).
+3. Click the **Pencil Icon** (✏️) in the top-right corner of the file view.
+4. Make your text changes in the editor.
+5. Scroll down to the **Commit changes** box.
+   - **Commit message**: Write a short summary of what you changed (e.g., "Fixed typo in Intro").
+   - Ensure "Commit directly to the `main` branch" is selected.
+6. Click the green **Commit changes** button.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 2. Creating a New Page
+1. Go to the **[Content Folder](https://github.com/iraq-developers/IQD-Wiki/tree/main/content)**.
+2. Click the **Add file** dropdown button in the top right.
+3. Select **Create new file**.
+4. In the name field, type your filename ending in `.md` (e.g., `my-new-guide.md`).
+5. Write your content in the large text area.
+6. Scroll down and click the green **Commit changes** button.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 3. Uploading Files (Images or Docs)
+1. Go to the **[Content Folder](https://github.com/iraq-developers/IQD-Wiki/tree/main/content)** (or the specific folder where images belong).
+2. Click **Add file** -> **Upload files**.
+3. Drag and drop your files into the box.
+4. Click the green **Commit changes** button.
