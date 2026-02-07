@@ -1,155 +1,36 @@
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
-.___                     ________               
-|   |___________    _____\______ \   _______  __
-|   \_  __ \__  \  / ____/|    |  \_/ __ \  \/ /
-|   ||  | \// __ \< <_|  ||    `   \  ___/\   / 
-|___||__|  (____  /\__   /_______  /\___  >\_/  
-                \/    |__|       \/     \/
- ```  
 
-ويكي تقنية شاملة خاصة بمنتدى r/iraq_developers
-### Navigation - الاقسام 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. [Programming | البرمجة](https://www.reddit.com/r/iraq_developers/wiki/index/programming)
-2. WebDev | تطوير الويب
-3. [Cyber Security | الامن السيبراني](https://www.reddit.com/r/iraq_developers/wiki/index/cybersec)
-4. Artificial intelligence | الذكاء الاصطناعي
-5. Networking | الشبكات
-6. Reverse Engineering | الهندسة العكسية
-7. Self Hosting | إستضافة ذاتية
-6. Gnu/Linux | نظام لنكس
-7. Windows | نظام وندوز
-8. Android | نظام اندرويد
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Learn More
 
+To learn more about Next.js, take a look at the following resources:
 
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-.
+## Deploy on Vercel
 
-## Programming - البرمجة
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-
-**ما هي البرمجة؟**
-
-**البرمجة**: هي امر او اوامر تعطيها للكمبيوتر حتى يقوم بتنفيذها و البرمجة هو عبارة عن تخاطب مع الكمبيوتر لكن عن طريق كتابة مثال عن طريق لغة برمجة معينة:
-
-الامر الاتي يقول للكمبيوتر اطبع يا كمبيوتر ما بين الاقواس:
-
-print("Hello, World!")
-
-و الكمبيوتر يرد و يكتب الاتي:
-
-
-`Hello, World!`
-
-.الخلاصة : البرمجة ليس الا طريقة للتواصل مع الكمبيوتر
-
-**ما هي لغة برمجة؟**
-
-**لغة برمجة**: هي لغة التي عن طرقها نتواصل مع الكمبيوتر يعني اذا البرمجة كان هو عبار عن كلام او تخاطب او اوامر للكمبيوتر فلغة البرمجة يكون هو اداة التواصل مع الكمبيوتر.
-
-**ما الفرق بين البرمجة و لغة برمجة؟**
-
-في واقعنا نتواصل مع الناس عن طريق الكلام(التخاطب) و لكن عند التخاطب نستخدم لغة معينة هذا اللغة المعينة هو لغة برمجة و الكلام نفسه هو عبارة عن برمجة.
-
-**بعض مصادر عربية يشرح ما هي البرمجة و اساسيات و ما قبل البرمجة:**
-
-[ما قبل تعلم البرمجة
-](https://youtube.com/playlist?list=PLDoPjvoNmBAx8xKvAXpb6f0Urj98Xo7zg&si=0vJL9te9Hnxy1UJ2)
-
-[تعلم أساسيات البرمجة للمبتدئين
-](https://youtube.com/playlist?list=PLoP3S2S1qTfBCtTYJ2dyy3mpn7aWAAjdN&si=-uXYHDM4eAkWcDOL)
-
-[تعلم البرمجة و كيف تبدأ في البرمجة؟ يعني ايه برمجة؟ ابدأ بأي لغة برمجة؟](https://youtu.be/k7TumDEPBNc)
-
-[كورس مقدمة عن أساسيات البرمجة للمبتدئين || محو الأمية البرمجية
-](https://youtu.be/06h470AiBZ4)
-
-
-##### Roles - فروع البرمجة
-
-- [Embedded system (IOT)](https://www.reddit.com/mod/iraq_developers/wiki/index/cybersec#wiki_embedded_system_.28iot.29)
-- [Low level development (Rust + C)](https://www.reddit.com/mod/iraq_developers/wiki/programming#wiki_low_level_development_.28rust_.2B_c.29)
-- [Game development](https://www.reddit.com/mod/iraq_developers/wiki/programming#wiki_game_development)
-- [Data Science](https://www.reddit.com/mod/iraq_developers/wiki/programming#wiki_data_science)
-
-[More info المزيد من المعلومات](https://www.reddit.com/r/iraq_developers/wiki/index/programming) ★
-
-
-## Web Development - تطوير تطبيقات الويب
-
-**ما هو Webdev:**
- واحدٌ من بين أكثر المجالات طلبًا في السوق التقنية، نظرًا لكونه يتعلّق بإنشاء وصناعة المواقع الإلكترونية وتطبيقات الويب بصورةٍ أساسيةٍ، حيث تحتاج إليه جميع المؤسسات والشركات والأفراد العاملون في هذا المجال.
-
-##### Roles - فروع
-
-- Backend
-- Frontend
-- Ui/Ux (Design)
-- DEVOPS
-
-
-[More info المزيد من المعلومات](webdev.md) ★
-
-
-## CyberSecurity - الأمن السيبراني
-
-**ما هو الامن السيبراني؟**
-
-الأمن السيبراني هو ممارسة تأمين أنظمة الكمبيوتر والشبكات والبيانات من الهجمات والانقطاعات والمضاعفات الأخرى (التي عادة ما تكون ذات طبيعة خبيثة). المجال المهني للأمن السيبراني واسع النطاق، ويشمل خبراء متخصصين في مواضيع تقنية فائقة التخصص، ومنفذي السياسات الاستراتيجية، والمحققين الجنائيين، وغيرهم. ويزداد هذا الاتساع بفضل العمق الكبير الذي يتمتع به كل مجال/مجال فرعي. إن العمل الذي ينطوي عليه تأمين التكنولوجيا التي نمتلكها ونستخدمها ونشغلها كل يوم هو جهد جماعي هائل من مؤسسات و افراد.
-
-##### Roles - فروع الأمن السيبراني
-
-- [Penetration testing](https://www.reddit.com/r/iraq_developers/wiki/index/cybersec#wiki_penetration_testing)
-- [Bugbounty](https://www.reddit.com/r/iraq_developers/wiki/index/cybersec#wiki_bugbounty)
-- [OSINT](https://www.reddit.com/r/iraq_developers/wiki/index/cybersec#wiki_osint)
-- [Malware Analysis](https://www.reddit.com/r/iraq_developers/wiki/index/cybersec#wiki_malware_analysis)
-- [Forensics](https://www.reddit.com/r/iraq_developers/wiki/index/cybersec#wiki_forensics)
-- [OPSEC](https://www.reddit.com/r/iraq_developers/wiki/index/cybersec#wiki_opsec)
-- [RECON](https://www.reddit.com/r/iraq_developers/wiki/index/cybersec#wiki_recon)
-
-[More info المزيد من المعلومات](https://www.reddit.com/r/iraq_developers/wiki/index/cybersec) ★
-
-
-
-
-
-## Gnu/Linux | نظام لنكس
-
-**ما هو نظام لينكس؟**
-
-**نظام لينكس**: نظام مفتوح المصدر مبني على نظام جنو مع نواة لنكس يمتاز بالخفة والسرعة و قابلية التخصيص وايضا الامان العالي ويدار من قبل مجتمع مطورين ضخم المزيد:
-> https://www.gnu.org/ || https://kernel.org/
-
-##### Roles - ما هي استخدامات نظام لينكس
-
-- [Networking](https://www.reddit.com/r/iraq_developers/wiki/index/Linux#wiki_Servers)
-- [CyberSecurity](https://www.reddit.com/r/iraq_developers/wiki/index/Linux#wiki_CyberSecurity)
-- [Machine Learning](https://www.reddit.com/r/iraq_developers/wiki/index/Linux#wiki_SoftwareDevelopment)
-- [SelfHosting](https://www.reddit.com/r/iraq_developers/wiki/index/Linux#wiki_Supercomputing)
-
-
-
-
-
-
-
-
-**كيف تبدأ  باللينكس**
-
-[كيف تختار التوزيعة الي تناسبك]
-(https://www.youtube.com/watch?v=18PRHMgZR2c)
-
-[توزيعات يجب تجنبها]
-(https://www.youtube.com/watch?v=6QMvRwLVuVw)
-
-[kali linux ما هي توزيعة](https://www.youtube.com/watch?v=Vrdj5hHC3bo)
-
-
-**كيف تحول النظام من ويندوز الى لينكس**
-
-
-[fedora linux](https://www.youtube.com/watch?v=PmvG1MC6H3o) - [linux mint](https://www.youtube.com/watch?v=PmvG1MC6H3o) - [HoloOS](https://www.youtube.com/watch?v=x4gZO7TZT9g) - [Bazzite](https://youtu.be/MfAZea_qkBI) - [Arch linux](https://www.youtube.com/watch?v=AYxaNjbC1wg) - [Ubuntu](https://youtu.be/4MCCT89iRPg) - [CachyOS](https://youtu.be/359Hrqf-3Dk)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
