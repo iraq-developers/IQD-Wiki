@@ -114,7 +114,7 @@ print("Hello, World!")
 
 - [Networking](https://www.reddit.com/r/iraq_developers/wiki/index/Linux#wiki_Servers)
 - [CyberSecurity](https://www.reddit.com/r/iraq_developers/wiki/index/Linux#wiki_CyberSecurity)
-- [Machine Learning](https://www.reddit.com/r/iraq_developers/wiki/index/Linux#wiki_Software Development)
+- [Machine Learning](https://www.reddit.com/r/iraq_developers/wiki/index/Linux#wiki_SoftwareDevelopment)
 - [SelfHosting](https://www.reddit.com/r/iraq_developers/wiki/index/Linux#wiki_Supercomputing)
 
 
