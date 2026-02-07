@@ -19,9 +19,3 @@ This guide explains how to update the wiki content directly from your browser wi
 4. In the name field, type your filename ending in `.md` (e.g., `my-new-guide.md`).
 5. Write your content in the large text area.
 6. Scroll down and click the green **Commit changes** button.
-
-## 3. Uploading Files (Images or Docs)
-1. Go to the **[Content Folder](https://github.com/iraq-developers/IQD-Wiki/tree/main/content)** (or the specific folder where images belong).
-2. Click **Add file** -> **Upload files**.
-3. Drag and drop your files into the box.
-4. Click the green **Commit changes** button.
