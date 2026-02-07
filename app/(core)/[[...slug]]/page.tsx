@@ -17,7 +17,8 @@ interface PageProps {
 }
 
 function formatSegment(segment: string): string {
-  return segment
+  const decoded = decodeURIComponent(segment);
+  return decoded
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");

@@ -7,7 +7,7 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-dvh max-w-4xl mx-auto w-full">
+    <div className="max-w-4xl mx-auto w-full">
       <MainNav />
       {children}
     </div>
