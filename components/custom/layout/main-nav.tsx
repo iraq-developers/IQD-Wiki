@@ -31,13 +31,13 @@ export default function MainNav() {
             <span className="sr-only">Open menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent>
+        <SheetContent side="right">
           <SheetHeader>
-            <SheetTitle>Community</SheetTitle>
+            <SheetTitle>المجتمع</SheetTitle>
           </SheetHeader>
           <div className="grid gap-4 py-4">
             <div className="flex flex-col gap-2">
-              <h3 className="text-sm font-medium">External Links</h3>
+              <h3 className="text-sm font-medium">روابط خارجية</h3>
               <a
                 href="https://www.reddit.com/r/iraq_developers/"
                 target="_blank"
