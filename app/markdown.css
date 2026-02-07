@@ -60,24 +60,158 @@
 }
 
 .markdown-content code {
-  background: hsl(var(--muted));
-  padding: 0.125rem 0.375rem;
-  border-radius: 0.25rem;
-  font-size: 0.875em;
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+}
+
+.markdown-content :not(pre) > code {
+  background: hsl(var(--muted));
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.375rem;
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
 }
 
 .markdown-content pre {
-  background: hsl(var(--muted));
-  padding: 1rem;
-  border-radius: 0.5rem;
-  overflow-x: auto;
-  margin-bottom: 1rem;
+  position: relative;
+  background: linear-gradient(135deg, hsl(220 15% 12%) 0%, hsl(220 15% 8%) 100%);
+  padding: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid hsl(220 15% 20% / 0.5);
+  box-shadow: 
+    0 4px 6px -1px hsl(0 0% 0% / 0.1),
+    0 2px 4px -2px hsl(0 0% 0% / 0.1),
+    inset 0 1px 0 hsl(220 15% 25% / 0.2);
+  direction: ltr;
+  text-align: left;
+}
+
+.markdown-content pre::before {
+  content: '';
+  display: block;
+  height: 40px;
+  background: linear-gradient(180deg, hsl(220 15% 15%) 0%, hsl(220 15% 12%) 100%);
+  border-bottom: 1px solid hsl(220 15% 20% / 0.5);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.markdown-content pre::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: hsl(0 72% 51%);
+  box-shadow: 
+    20px 0 0 hsl(45 93% 47%),
+    40px 0 0 hsl(142 71% 45%);
 }
 
 .markdown-content pre code {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
   background: transparent;
-  padding: 0;
+  color: hsl(220 14% 71%);
+  line-height: 1.6;
+  font-size: 0.875rem;
+  border: none;
+}
+
+/* Syntax Highlighting Theme - One Dark inspired */
+.markdown-content pre code .hljs-keyword,
+.markdown-content pre code .hljs-selector-tag,
+.markdown-content pre code .hljs-literal,
+.markdown-content pre code .hljs-section,
+.markdown-content pre code .hljs-link {
+  color: hsl(286 60% 67%);
+}
+
+.markdown-content pre code .hljs-string,
+.markdown-content pre code .hljs-title,
+.markdown-content pre code .hljs-name,
+.markdown-content pre code .hljs-type,
+.markdown-content pre code .hljs-attribute,
+.markdown-content pre code .hljs-symbol,
+.markdown-content pre code .hljs-bullet,
+.markdown-content pre code .hljs-addition,
+.markdown-content pre code .hljs-variable,
+.markdown-content pre code .hljs-template-tag,
+.markdown-content pre code .hljs-template-variable {
+  color: hsl(95 38% 62%);
+}
+
+.markdown-content pre code .hljs-comment,
+.markdown-content pre code .hljs-quote,
+.markdown-content pre code .hljs-deletion,
+.markdown-content pre code .hljs-meta {
+  color: hsl(220 10% 40%);
+  font-style: italic;
+}
+
+.markdown-content pre code .hljs-function {
+  color: hsl(207 82% 66%);
+}
+
+.markdown-content pre code .hljs-number,
+.markdown-content pre code .hljs-regexp,
+.markdown-content pre code .hljs-built_in,
+.markdown-content pre code .hljs-params {
+  color: hsl(29 54% 61%);
+}
+
+.markdown-content pre code .hljs-class .hljs-title,
+.markdown-content pre code .hljs-title.class_ {
+  color: hsl(39 67% 69%);
+}
+
+.markdown-content pre code .hljs-attr {
+  color: hsl(29 54% 61%);
+}
+
+.markdown-content pre code .hljs-property {
+  color: hsl(355 65% 65%);
+}
+
+.markdown-content pre code .hljs-punctuation {
+  color: hsl(220 14% 71%);
+}
+
+.markdown-content pre code .hljs-tag {
+  color: hsl(355 65% 65%);
+}
+
+.markdown-content pre code .hljs-tag .hljs-name {
+  color: hsl(355 65% 65%);
+}
+
+.markdown-content pre code .hljs-tag .hljs-attr {
+  color: hsl(29 54% 61%);
+}
+
+/* Scrollbar styling for code blocks */
+.markdown-content pre code::-webkit-scrollbar {
+  height: 8px;
+}
+
+.markdown-content pre code::-webkit-scrollbar-track {
+  background: hsl(220 15% 15%);
+  border-radius: 4px;
+}
+
+.markdown-content pre code::-webkit-scrollbar-thumb {
+  background: hsl(220 15% 30%);
+  border-radius: 4px;
+}
+
+.markdown-content pre code::-webkit-scrollbar-thumb:hover {
+  background: hsl(220 15% 40%);
 }
 
 .markdown-content blockquote {
