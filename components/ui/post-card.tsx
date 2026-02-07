@@ -32,10 +32,7 @@ export function PostCard({
   mainImage,
 }: PostCardProps) {
   return (
-    <Link
-      href={`/posts/${slug}`}
-      className="block transition-all hover:scale-[1.02]"
-    >
+    <Link href={`${slug}`} className="block transition-all hover:scale-[1.02]">
       <Card className="h-full overflow-hidden hover:bg-muted/50 transition-colors cursor-pointer border-2 hover:border-primary/20 flex flex-col">
         {mainImage && (
           <div className="relative aspect-video w-full overflow-hidden bg-muted">

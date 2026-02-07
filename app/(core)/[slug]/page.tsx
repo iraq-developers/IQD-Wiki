@@ -123,7 +123,7 @@ export default async function CategoryPage({
               <PostCard
                 key={post._id}
                 title={post.title}
-                slug={post.slug}
+                slug={`${slug}/${post.slug}`}
                 publishedAt={post.publishedAt}
                 mainImage={post.mainImage}
                 author={post.author}
