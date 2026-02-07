@@ -31,6 +31,32 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: PageProps) {
+  const { slug = [] } = await params;
+  const page = await getPageBySlug(slug);
+
+  if (!page) {
+    return {
+      title: "Page Not Found",
+      description: "The page you are looking for does not exist.",
+    };
+  }
+
+  return {
+    title: page.title,
+    description: page.description || `Read about ${page.title} on IQD Wiki`,
+    alternates: {
+      canonical: `/${slug.join("/")}`,
+    },
+    openGraph: {
+      title: page.title,
+      description: page.description || `Read about ${page.title} on IQD Wiki`,
+      type: "article",
+      url: `/${slug.join("/")}`,
+    },
+  };
+}
+
 export default async function WikiPage({ params }: PageProps) {
   const { slug = [] } = await params;
   const page = await getPageBySlug(slug);
@@ -39,8 +65,35 @@ export default async function WikiPage({ params }: PageProps) {
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: page.title,
+    description: page.description || `Read about ${page.title} on IQD Wiki`,
+    author: {
+      "@type": "Organization",
+      name: "IQD Community",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "IQD Community",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://iraq-developers.netlify.app/favicon.ico",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://iraq-developers.netlify.app/${slug.join("/")}`,
+    },
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="max-w-4xl mx-auto px-6 py-12">
         {slug.length > 0 && (
           <Breadcrumb className="mb-6">

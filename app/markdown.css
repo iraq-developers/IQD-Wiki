@@ -204,7 +204,6 @@
   color: hsl(29 54% 61%);
 }
 
-/* Scrollbar styling for code blocks */
 .markdown-content pre code::-webkit-scrollbar {
   height: 8px;
 }
