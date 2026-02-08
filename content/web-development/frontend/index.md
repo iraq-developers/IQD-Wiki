@@ -57,10 +57,10 @@ title: برمجة الواجهات (Frontend)
 
 > لأن أني مبرمج وردة مال الله فراح أسوي بيج لكل تقنية تحتاج تعرفه و بالتسلسل ان شاء الله, أحنا ما نريد نبني موقع كورسات أحنا جاي نبني موقع علمود المبرمج يعرف من وين يبدي و يا مصادر يستخدم حتى يتعلم. فالي اريده منك هسة شوف هاي الصفحات بالتسلسل
 
-1- **[بيج خاص لhtml ](/web-development/frontend/html)**
+1- **[بيج خاص لhtml ](/web-development/frontend/technologies/html)**
 
-2- **[بيج خاص لcss ](/web-development/frontend/html)**
+2- **[بيج خاص لcss ](/web-development/frontend/technologies/css)**
 
-3- **[بيج خاص لjavascript ](/web-development/frontend/html)**
+3- **[بيج خاص لjavascript ](/web-development/frontend/technologies/javascript)**
 
 أذا تريد تعرف عن الباكند أيضا تكدر تشوف [هذا الصفحة](/web-development/backend).
