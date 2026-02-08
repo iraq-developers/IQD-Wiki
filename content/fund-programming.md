@@ -37,8 +37,8 @@ print("Hello, World!")
 ## اي برنامج استخدم حتى ابرمج؟
 
 ### بعض البرامج و شلون تحملهم:
-* [VS Code](https://code.visualstudio.com/) [VS Code طريقة تحميل](https://code.visualstudio.com/) 
-* [ATOM](https://atom-editor.cc/)
-* [Notepad++](https://notepad-plus-plus.org/downloads/)
+* [VS Code](https://code.visualstudio.com/)                    ||                [VS Code طريقة تحميل](https://code.visualstudio.com/) 
+* [ATOM](https://atom-editor.cc/)                              ||                [ِATOM طريقة تحميل]([https://code.visualstudio.com/](https://youtu.be/_ZPKL5MOi3Q)) 
+* [Notepad++](https://notepad-plus-plus.org/downloads/)        ||                [Notepad++ طريقة تحميل]([https://code.visualstudio.com/](https://www.youtube.com/watch?v=-sZYtfCczUo)) 
 * 
 * 
