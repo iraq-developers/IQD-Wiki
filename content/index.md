@@ -8,7 +8,7 @@
 
 - [**Web Development**](./web-development)
 
-- [**Cyber Security**](./cyber-security) _(Coming Soon)_
+- [**Cyber Security**](./cyber-security)
 
 - [**Mobile App Development**](./mobile-apps) _(Coming Soon)_
 
