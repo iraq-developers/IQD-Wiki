@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",
-    "@uiw/react-md-editor": "^4.0.11",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -19,6 +18,7 @@
     "gray-matter": "^4.0.3",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.563.0",
+    "markdown-it": "^14.1.0",
     "next": "16.1.6",
     "next-sanity": "^12.1.0",
     "next-themes": "^0.4.6",
@@ -26,6 +26,7 @@
     "react": "19.2.3",
     "react-day-picker": "^9.13.1",
     "react-dom": "19.2.3",
+    "react-markdown-editor-lite": "^1.4.2",
     "react-photo-view": "^1.2.7",
     "react-resizable-panels": "^4.6.2",
     "recharts": "2.15.4",
@@ -44,6 +45,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/markdown-it": "^14.1.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
