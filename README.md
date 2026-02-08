@@ -103,3 +103,4 @@ To edit files, you must be added to the repository contributors list.
 
 **Why Contribute?**
 We are the **Iraq Developers Community**, dedicated to building a comprehensive resource for developers in Iraq. By sharing knowledge and documenting local tech resources, we help each other grow and build a stronger tech ecosystem together.
+.
