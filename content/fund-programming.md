@@ -54,7 +54,7 @@ IDE : هو نفس Text Editor بس بميزات اكثر و اقوى و يستخ
 | Debugger | موجود | غالبًا غير موجود |
 | Compiler / Interpreter | غالبًا مدمج | غير مدمج |
 
-
+[الفرق بين Text-Editor و IDE](https://youtu.be/6dXRZUN1jbw)
 
 
 ## اي برنامج استخدم حتى ابرمج؟
