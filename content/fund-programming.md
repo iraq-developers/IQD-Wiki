@@ -36,13 +36,14 @@ Hello, World!
  
 * [Roadmap - Learning Programming (Arabic)](https://youtu.be/LGY-Keww1Ac)
 * [بخصوص مسار التأسيس البرمجي](https://youtu.be/JdEI8Zaf-lA)
-## ما هو Text Editor و IDE؟
+## ما هو Text Editor؟
 
 Text Editor : او ما يعرف بمحرر الاكواد هو مكان(برنامج) الي تكتب بيه الكود و المحرر يحوله من لغة برمجة الى لغة يفهمه الكمبيوتر, و هو برنامج يكون على اغلب سهل الاستخدام و بسيط و خفيف و يستخدم لشغل بسيط نسبيا.
 
+## ما هو IDE؟
 IDE : هو نفس Text Editor بس بميزات اكثر و اقوى و يستخدم لمشاريع الكبيرة و لكن ابطأ و اثقل, و IDE مختصر لجملة (Integrated Development Environment).
 
-فرق بين IDE و Text Editor 
+## فرق بين IDE و Text Editor: 
 :
 |  من اي ناحية | IDE | Text Editor |
 |--------|------|--------------|
@@ -65,7 +66,7 @@ IDE : هو نفس Text Editor بس بميزات اكثر و اقوى و يستخ
 * [Notepad++](https://notepad-plus-plus.org/downloads/)        ||                [Notepad++ طريقة تحميل](https://www.youtube.com/watch?v=-sZYtfCczUo)
 
 
-
+## ما هو Interpreter و Compiler؟
 
 
 
