@@ -1,0 +1,24 @@
+{
+  "output": {
+    "filePath": "result.xml",
+    "style": "xml",
+    "removeComments": true,
+    "showLineNumbers": false,
+    "copyToClipboard": true
+  },
+  "include": [
+    "content/**/*"
+  ],
+  "ignore": {
+    "useGitignore": true,
+    "customPatterns": [
+      "**/*.png",
+      "**/*.jpg",
+      "**/*.jpeg",
+      "**/*.svg",
+      "**/*.gif",
+      "**/*.ico",
+      "**/*.lock"
+    ]
+  }
+}

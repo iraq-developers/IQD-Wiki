@@ -9,6 +9,8 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+repomix-output.xml
+result.xml
 
 # testing
 /coverage
