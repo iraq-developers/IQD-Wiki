@@ -20,6 +20,7 @@
 1.  **White Hat (الهكر الأخلاقي):** يستخدم مهاراته لحماية الأنظمة ومساعدة الشركات في سد الثغرات.
 2.  **Black Hat (الهكر المخرّب):** يخترق الأنظمة لأغراض غير قانونية مثل السرقة أو التخريب.
 3.  **Grey Hat (الهكر الرمادي):** يتنقل بين الاثنين؛ قد يخترق بدون إذن لكنه لا يهدف للأذى غالباً.
+![Hackers the hats](https://media.geeksforgeeks.org/wp-content/uploads/20250428112620540669/Types-of-Hackers.png)
 
 ## Cybersecurity Specialized Domains | تخصصات الأمن السيبراني
 
