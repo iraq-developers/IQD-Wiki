@@ -89,6 +89,12 @@ console.log("Hello World");
 
 > This is a quote
 
+**YouTube Videos**
+Embed a YouTube video by placing this on its own line:
+`::youtube[https://www.youtube.com/watch?v=VIDEO_ID]`
+
+Supports `youtube.com/watch`, `youtu.be`, and `youtube.com/shorts` links.
+
 ---
 
 ### ⚡ Automatic Updates

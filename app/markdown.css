@@ -317,3 +317,33 @@
   color: var(--muted-foreground);
   text-align: center;
 }
+
+.markdown-content .youtube-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 4px 6px -1px hsl(0 0% 0% / 0.1),
+    0 2px 4px -2px hsl(0 0% 0% / 0.1);
+  background: var(--muted);
+  transition: box-shadow 0.2s ease;
+}
+
+.markdown-content .youtube-embed:hover {
+  box-shadow:
+    0 10px 15px -3px hsl(0 0% 0% / 0.15),
+    0 4px 6px -4px hsl(0 0% 0% / 0.1);
+}
+
+.markdown-content .youtube-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
