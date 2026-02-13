@@ -76,35 +76,9 @@ Hello, World!
 
 ---
 
-## نظام لينكس - Gnu/Linux
 
-**ما هو نظام لينكس؟**
 
-نظام لينكس نظام مفتوح المصدر مبني على نظام جنو مع نواة لينكس. يمتاز بالخفة والسرعة وقابلية التخصيص وأيضاً الأمان العالي، ويُدار من قبل مجتمع مطورين ضخم.
-
-> المزيد: [gnu.org](https://www.gnu.org/) | [kernel.org](https://kernel.org/)
-
-### استخدامات نظام لينكس
-
-- [الشبكات | Networking](/لينكس/الشبكات)
-- [الأمن السيبراني | CyberSecurity](/لينكس/الأمن-السيبراني)
-- [تعلم الآلة | Machine Learning](/لينكس/تعلم-الآلة)
-- [الاستضافة الذاتية | SelfHosting](/لينكس/الاستضافة-الذاتية)
-
-### كيف تبدأ باللينكس
-
-- [كيف تختار التوزيعة التي تناسبك](https://www.youtube.com/watch?v=18PRHMgZR2c)
-- [توزيعات يجب تجنبها](https://www.youtube.com/watch?v=6QMvRwLVuVw)
-- [ما هي توزيعة Kali Linux](https://www.youtube.com/watch?v=Vrdj5hHC3bo)
-
-### كيف تحول النظام من ويندوز إلى لينكس
-
-- [Fedora Linux](https://www.youtube.com/watch?v=PmvG1MC6H3o)
-- [Linux Mint](https://www.youtube.com/watch?v=PmvG1MC6H3o)
-- [HoloOS](https://www.youtube.com/watch?v=x4gZO7TZT9g)
-- [Bazzite](https://youtu.be/MfAZea_qkBI)
-- [Arch Linux](https://www.youtube.com/watch?v=AYxaNjbC1wg)
-- [Ubuntu](https://youtu.be/4MCCT89iRPg)
-- [CachyOS](https://youtu.be/359Hrqf-3Dk)
-
-[المزيد من المعلومات ★](/لينكس)
+## [ نظام لينكس - Gnu/Linux](linux/index)
+## [ نظام لينكس والأمن السيبراني - Gnu/Linux](content/linux/linux_cyper/index)
+## [ شبكات لينكس - linux-networks](content/linux/linux_network/index)
+## [ كيف تنتقل من ويندوز إلى لينكس - switch-to-linux](content/linux/switch_to_linux/index)
