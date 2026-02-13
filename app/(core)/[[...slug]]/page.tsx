@@ -13,6 +13,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { PageActionsDropdown } from "@/components/custom/page-actions-dropdown";
 
 interface PageProps {
   params: Promise<{ slug?: string[] }>;
@@ -98,37 +99,40 @@ export default async function WikiPage({ params }: PageProps) {
       />
       <div className="max-w-4xl mx-auto px-6 md:py-12 py-0">
         {slug.length > 0 && (
-          <Breadcrumb className="mb-6">
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href="/">
-                    <Home className="size-4" />
-                  </Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              {slug.map((segment, index) => {
-                const isLast = index === slug.length - 1;
-                const href = "/" + slug.slice(0, index + 1).join("/");
-                return (
-                  <div key={href} className="flex items-center gap-1.5">
-                    <BreadcrumbSeparator />
-                    <BreadcrumbItem>
-                      {isLast ? (
-                        <BreadcrumbPage>
-                          {formatSegment(segment)}
-                        </BreadcrumbPage>
-                      ) : (
-                        <BreadcrumbLink asChild>
-                          <Link href={href}>{formatSegment(segment)}</Link>
-                        </BreadcrumbLink>
-                      )}
-                    </BreadcrumbItem>
-                  </div>
-                );
-              })}
-            </BreadcrumbList>
-          </Breadcrumb>
+          <div className="flex items-center justify-between mb-6 gap-4">
+            <Breadcrumb className="mb-0">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href="/">
+                      <Home className="size-4" />
+                    </Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                {slug.map((segment, index) => {
+                  const isLast = index === slug.length - 1;
+                  const href = "/" + slug.slice(0, index + 1).join("/");
+                  return (
+                    <div key={href} className="flex items-center gap-1.5">
+                      <BreadcrumbSeparator />
+                      <BreadcrumbItem>
+                        {isLast ? (
+                          <BreadcrumbPage>
+                            {formatSegment(segment)}
+                          </BreadcrumbPage>
+                        ) : (
+                          <BreadcrumbLink asChild>
+                            <Link href={href}>{formatSegment(segment)}</Link>
+                          </BreadcrumbLink>
+                        )}
+                      </BreadcrumbItem>
+                    </div>
+                  );
+                })}
+              </BreadcrumbList>
+            </Breadcrumb>
+            <PageActionsDropdown />
+          </div>
         )}
 
         <article className="prose prose-neutral dark:prose-invert max-w-none">
