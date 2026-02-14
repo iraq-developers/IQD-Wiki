@@ -12,6 +12,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
+  BreadcrumbEllipsis,
 } from "@/components/ui/breadcrumb";
 import { PageActionsDropdown } from "@/components/custom/page-actions-dropdown";
 
@@ -99,7 +100,7 @@ export default async function WikiPage({ params }: PageProps) {
       />
       <div className="max-w-4xl mx-auto px-6 md:py-12 py-6">
         {slug.length > 0 && (
-          <div className="flex md:items-center items-start justify-between mb-6 md:flex-row flex-col-reverse gap-4">
+          <div className="flex items-center justify-between mb-6 gap-4">
             <Breadcrumb className="mb-0">
               <BreadcrumbList>
                 <BreadcrumbItem>
@@ -109,11 +110,39 @@ export default async function WikiPage({ params }: PageProps) {
                     </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
+                {slug.length > 2 && (
+                  <div
+                    className={`flex items-center gap-1.5 ${slug.length > 4 ? "" : "md:hidden"}`}
+                  >
+                    <BreadcrumbSeparator />
+                    <BreadcrumbItem>
+                      <BreadcrumbEllipsis />
+                    </BreadcrumbItem>
+                  </div>
+                )}
                 {slug.map((segment, index) => {
                   const isLast = index === slug.length - 1;
                   const href = "/" + slug.slice(0, index + 1).join("/");
+
+                  let visibility = "";
+                  if (!isLast) {
+                    if (index <= 1) {
+                      visibility = slug.length > 2 ? "hidden md:flex" : "";
+                    } else {
+                      visibility =
+                        slug.length > 4
+                          ? "hidden"
+                          : slug.length > 2
+                            ? "hidden md:flex"
+                            : "";
+                    }
+                  }
+
                   return (
-                    <div key={href} className="flex items-center gap-1.5">
+                    <div
+                      key={href}
+                      className={`flex items-center gap-1.5 ${visibility}`}
+                    >
                       <BreadcrumbSeparator />
                       <BreadcrumbItem>
                         {isLast ? (

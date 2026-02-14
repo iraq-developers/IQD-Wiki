@@ -124,9 +124,9 @@ export function PageActionsDropdown({ url }: PageActionsDropdownProps) {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-56">
-          <DropdownMenuItem onClick={() => openInAi("v0")}>
-            <Hexagon className="mr-2 size-4 text-muted-foreground" />
-            Open in v0
+          <DropdownMenuItem onClick={() => openInAi("gemini")}>
+            <Sparkles className="mr-2 size-4 text-muted-foreground" />
+            Open in Gemini
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => openInAi("chatgpt")}>
             <Bot className="mr-2 size-4 text-muted-foreground" />
@@ -135,10 +135,6 @@ export function PageActionsDropdown({ url }: PageActionsDropdownProps) {
           <DropdownMenuItem onClick={() => openInAi("claude")}>
             <Brain className="mr-2 size-4 text-muted-foreground" />
             Open in Claude
-          </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => openInAi("gemini")}>
-            <Sparkles className="mr-2 size-4 text-muted-foreground" />
-            Open in Gemini
           </DropdownMenuItem>
           <DropdownMenuSeparator />
 
