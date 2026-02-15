@@ -168,6 +168,25 @@ export default async function WikiPage({ params }: PageProps) {
           <MarkdownContent htmlContent={page.htmlContent || ""} />
         </article>
 
+        {page.related && page.related.length > 0 && (
+          <div className="mt-12 pt-6 border-t">
+            <h3 className="text-lg font-semibold mb-4">Related Resources</h3>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {page.related.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="group block p-4 rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="font-medium group-hover:text-primary transition-colors">
+                    {link.title}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
         <GitHubIssueForm articleTitle={page.title} />
 
         {slug.length === 0 && <PagesList />}

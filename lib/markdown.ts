@@ -16,6 +16,10 @@ export interface WikiPage {
   description?: string;
   content: string;
   htmlContent?: string;
+  related?: {
+    title: string;
+    href: string;
+  }[];
 }
 
 export interface WikiPageMeta {
@@ -116,6 +120,7 @@ export async function getPageBySlug(slug: string[]): Promise<WikiPage | null> {
         description: data.description,
         content,
         htmlContent,
+        related: data.related,
       };
     }
   }
