@@ -7,6 +7,8 @@ import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
 import rehypeHighlight from "rehype-highlight";
 import rehypeStringify from "rehype-stringify";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 const contentDirectory = path.join(process.cwd(), "content");
 
@@ -110,6 +112,15 @@ export async function getPageBySlug(slug: string[]): Promise<WikiPage | null> {
         .use(remarkRehype, { allowDangerousHtml: true })
         .use(rehypeRaw)
         .use(rehypeHighlight)
+        .use(rehypeSlug)
+        .use(rehypeAutolinkHeadings, {
+          behavior: "wrap",
+          properties: {
+            className: ["heading-link"],
+            ariaHidden: true,
+            tabIndex: -1,
+          },
+        })
         .use(rehypeStringify)
         .process(processed);
       const htmlContent = processedContent.toString();

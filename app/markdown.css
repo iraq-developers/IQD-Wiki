@@ -448,3 +448,40 @@
     transform: translateY(0);
   }
 }
+
+/* Linkable Headings */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  scroll-margin-top: 5rem; /* Adjust based on navbar height */
+}
+
+.markdown-content .heading-link {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.markdown-content .heading-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.markdown-content .heading-link::after {
+  content: "#";
+  display: inline-block;
+  margin-left: 0.5rem;
+  color: var(--primary);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-weight: normal;
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+.markdown-content .heading-link:hover::after {
+  opacity: 1;
+}
