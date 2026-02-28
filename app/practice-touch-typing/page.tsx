@@ -95,11 +95,8 @@ function useDebouncedCallback<T extends (...args: any[]) => any>(fn: T, delay: n
 /**
  * Chunked text display — groups consecutive characters with the same status
  * into single <span> elements instead of one <span> per character.
- * Also uses a "window" approach: only renders characters near the cursor.
+ * Renders the full text so nothing appears or disappears while typing.
  */
-const WINDOW_BEFORE = 400; // chars to render before cursor
-const WINDOW_AFTER = 400;  // chars to render after cursor
-
 const TextDisplay = memo(function TextDisplay({
   activeText,
   typed,
@@ -108,17 +105,15 @@ const TextDisplay = memo(function TextDisplay({
   typed: string;
 }) {
   const cursorPos = typed.length;
-  const windowStart = Math.max(0, cursorPos - WINDOW_BEFORE);
-  const windowEnd = Math.min(activeText.length, cursorPos + WINDOW_AFTER);
 
-  // Build chunks within the visible window
+  // Build chunks for the entire text
   const chunks: { text: string; className: string; hasCursor: boolean }[] = [];
 
   let currentClass = "";
   let currentText = "";
   let currentHasCursor = false;
 
-  for (let i = windowStart; i < windowEnd; i++) {
+  for (let i = 0; i < activeText.length; i++) {
     const ch = activeText[i];
     const isCursor = i === cursorPos;
     let cls: string;
@@ -174,11 +169,6 @@ const TextDisplay = memo(function TextDisplay({
 
   return (
     <>
-      {windowStart > 0 && (
-        <span className="text-muted-foreground" aria-hidden>
-          {"\u2026"}
-        </span>
-      )}
       {chunks.map((chunk, i) => (
         <span
           key={i}
@@ -188,11 +178,6 @@ const TextDisplay = memo(function TextDisplay({
           {chunk.text}
         </span>
       ))}
-      {windowEnd < activeText.length && (
-        <span className="text-muted-foreground/20" aria-hidden>
-          {"\u2026"}
-        </span>
-      )}
     </>
   );
 });
@@ -337,15 +322,19 @@ function TypingPracticeInner() {
     return () => clearInterval(iv);
   }, [isFinished, isActive]);
 
-  // Auto-scroll — use data attribute instead of class query
+  // Auto-scroll — keep the cursor roughly 1/3 from the top of the container
   useEffect(() => {
     if (!displayRef.current) return;
     const el = displayRef.current.querySelector("[data-cursor]");
     if (el) {
       const box = displayRef.current.getBoundingClientRect();
       const r = el.getBoundingClientRect();
-      if (r.top < box.top + 5 || r.bottom > box.bottom - 15) {
-        displayRef.current.scrollTo({ top: displayRef.current.scrollTop + (r.top - box.top) - 48, behavior: "smooth" });
+      const targetOffset = box.height * 0.33; // keep cursor ~1/3 from top
+      if (r.top < box.top + 10 || r.bottom > box.bottom - 30) {
+        displayRef.current.scrollTo({
+          top: displayRef.current.scrollTop + (r.top - box.top) - targetOffset,
+          behavior: "smooth",
+        });
       }
     }
   }, [typed]);
@@ -565,7 +554,7 @@ function TypingPracticeInner() {
               </div>
               <div
                 ref={displayRef}
-                className="text-2xl leading-[2.2] tracking-wide flex-1 overflow-y-auto"
+                className="text-4xl leading-[2.2] tracking-wide flex-1 overflow-y-auto"
                 style={{ scrollbarWidth: "none", fontFamily: "'Source Code Pro', monospace" }}
               >
                 <TextDisplay activeText={activeText} typed={typed} />
