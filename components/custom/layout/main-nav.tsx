@@ -10,8 +10,16 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
-import { Menu, Github, Globe, LayoutGrid } from "lucide-react";
+import { Menu, Globe, LayoutGrid } from "lucide-react";
+import { Github } from "@/components/custom/icons";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Separator } from "@/components/ui/separator";
 import { sidebarNavItems } from "@/lib/config";
@@ -33,8 +41,8 @@ export default function MainNav() {
       </Link>
 
       <div className="flex items-center gap-2">
-        <Sheet open={sectionsOpen} onOpenChange={setSectionsOpen}>
-          <SheetTrigger asChild>
+        <Drawer open={sectionsOpen} onOpenChange={setSectionsOpen}>
+          <DrawerTrigger asChild>
             <Button
               variant="outline"
               size="sm"
@@ -43,12 +51,12 @@ export default function MainNav() {
               <LayoutGrid className="h-4 w-4" />
               <span>الأقسام</span>
             </Button>
-          </SheetTrigger>
-          <SheetContent side="bottom" className="h-[80vh] rounded-t-xl">
-            <SheetHeader className="text-right mb-4">
-              <SheetTitle>الأقسام</SheetTitle>
-            </SheetHeader>
-            <div className="flex flex-col gap-1 overflow-y-auto pb-6">
+          </DrawerTrigger>
+          <DrawerContent className="max-h-[80vh]">
+            <DrawerHeader className="text-right">
+              <DrawerTitle>الأقسام</DrawerTitle>
+            </DrawerHeader>
+            <div className="flex flex-col gap-1 overflow-y-auto px-4 pb-6">
               {sidebarNavItems.map((item) => (
                 <Link
                   key={item.href}
@@ -63,8 +71,8 @@ export default function MainNav() {
                 </Link>
               ))}
             </div>
-          </SheetContent>
-        </Sheet>
+          </DrawerContent>
+        </Drawer>
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon">

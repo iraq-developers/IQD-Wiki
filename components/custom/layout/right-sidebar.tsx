@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Github, Globe } from "lucide-react";
+import { Globe } from "lucide-react";
+import { Github } from "@/components/custom/icons";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
