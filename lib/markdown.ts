@@ -18,6 +18,7 @@ export interface WikiPage {
   description?: string;
   content: string;
   htmlContent?: string;
+  lastModified?: Date;
   related?: {
     title: string;
     href: string;
@@ -28,6 +29,7 @@ export interface WikiPageMeta {
   slug: string[];
   title: string;
   description?: string;
+  lastModified?: Date;
 }
 
 function extractYouTubeId(url: string): string | null {
@@ -84,6 +86,7 @@ export function getAllPages(dir: string = contentDirectory): WikiPageMeta[] {
         slug,
         title: data.title || slug[slug.length - 1] || "Home",
         description: data.description,
+        lastModified: fs.statSync(fullPath).mtime,
       });
     }
   }
@@ -131,6 +134,7 @@ export async function getPageBySlug(slug: string[]): Promise<WikiPage | null> {
         description: data.description,
         content,
         htmlContent,
+        lastModified: fs.statSync(filePath).mtime,
         related: data.related,
       };
     }

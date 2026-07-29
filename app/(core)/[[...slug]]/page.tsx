@@ -46,17 +46,33 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
+  const description =
+    page.description || `اقرأ عن ${page.title} في موسوعة IQD Wiki`;
+  const slugPath = slug.map(encodeURIComponent).join("/");
+  const canonicalPath = slug.length === 0 ? "/" : `/${slugPath}`;
+  const ogImage = slug.length === 0 ? "/opengraph-image" : `/og/${slugPath}`;
+
   return {
     title: page.title,
-    description: page.description || `Read about ${page.title} on IQD Wiki`,
+    description,
     alternates: {
-      canonical: `/${slug.join("/")}`,
+      canonical: canonicalPath,
     },
     openGraph: {
       title: page.title,
-      description: page.description || `Read about ${page.title} on IQD Wiki`,
+      description,
       type: "article",
-      url: `/${slug.join("/")}`,
+      url: canonicalPath,
+      siteName: "IQD Wiki",
+      locale: "ar_IQ",
+      modifiedTime: page.lastModified?.toISOString(),
+      images: [{ url: ogImage, width: 1200, height: 630, alt: page.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.title,
+      description,
+      images: [ogImage],
     },
   };
 }
@@ -69,28 +85,63 @@ export default async function WikiPage({ params }: PageProps) {
     notFound();
   }
 
+  const pageUrl = `https://iqdwiki.com/${slug.map(encodeURIComponent).join("/")}`;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: page.title,
-    description: page.description || `Read about ${page.title} on IQD Wiki`,
+    description:
+      page.description || `اقرأ عن ${page.title} في موسوعة IQD Wiki`,
+    inLanguage: "ar",
+    dateModified: page.lastModified?.toISOString(),
+    image: `https://iqdwiki.com/og/${slug.map(encodeURIComponent).join("/")}`,
     author: {
       "@type": "Organization",
       name: "IQD Community",
+      url: "https://iqdwiki.com",
     },
     publisher: {
       "@type": "Organization",
       name: "IQD Community",
       logo: {
         "@type": "ImageObject",
-        url: "https://iqdwiki.com/favicon.ico",
+        url: "https://iqdwiki.com/logo.webp",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://iqdwiki.com/${slug.join("/")}`,
+      "@id": pageUrl,
     },
   };
+
+  const breadcrumbJsonLd =
+    slug.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "الرئيسية",
+              item: "https://iqdwiki.com",
+            },
+            ...slug.map((segment, index) => ({
+              "@type": "ListItem",
+              position: index + 2,
+              name:
+                index === slug.length - 1
+                  ? page.title
+                  : formatSegment(segment),
+              item: `https://iqdwiki.com/${slug
+                .slice(0, index + 1)
+                .map(encodeURIComponent)
+                .join("/")}`,
+            })),
+          ],
+        }
+      : null;
 
   return (
     <div className="min-h-screen bg-background">
@@ -98,6 +149,14 @@ export default async function WikiPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {breadcrumbJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbJsonLd),
+          }}
+        />
+      )}
       <div className="max-w-4xl mx-auto px-6 md:py-12 py-6">
         {slug.length > 0 && (
           <div className="flex items-center justify-between mb-6 gap-4">

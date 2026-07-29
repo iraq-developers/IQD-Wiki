@@ -31,6 +31,19 @@ export const metadata: Metadata = {
   authors: [{ name: "IQD Community" }],
   creator: "IQD Community",
   publisher: "IQD Community",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "IQD Wiki - المصدر الأول للمطورين في العراق",
     description:
@@ -52,6 +65,26 @@ export const metadata: Metadata = {
   },
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "IQD Wiki",
+  alternateName: "موسوعة المطورين العراقيين",
+  url: "https://iqdwiki.com",
+  description:
+    "موسوعة المطورين العراقيين الشاملة. مقالات، دروس، ومصادر تعلم برمجية باللغة العربية.",
+  inLanguage: "ar",
+  publisher: {
+    "@type": "Organization",
+    name: "IQD Community",
+    url: "https://iqdwiki.com",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://iqdwiki.com/logo.webp",
+    },
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -60,6 +93,10 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body className={`${notoSansArabic.variable} antialiased font-sans`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
