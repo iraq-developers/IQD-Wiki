@@ -1,5 +1,3 @@
-export const SAMPLE_TEXT = `The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs. How vexingly quick daft zebras jump. The five boxing wizards jump quickly at dawn.`;
-
 /**
  * Strip markdown syntax and remove any character not directly on a keyboard.
  * Preserves newlines so the full content structure is shown.

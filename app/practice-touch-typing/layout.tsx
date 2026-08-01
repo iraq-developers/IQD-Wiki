@@ -1,26 +1,33 @@
 import type { Metadata } from "next";
+import { JetBrains_Mono } from "next/font/google";
+
+const typingMono = JetBrains_Mono({
+    subsets: ["latin"],
+    weight: ["400", "500"],
+    display: "swap",
+    variable: "--font-mono-typing",
+});
 
 export const metadata: Metadata = {
     title: "Practice Touch Typing | تدرّب على الكتابة السريعة",
     description:
-        "Free online touch typing practice tool. Paste any English article and practice typing in a distraction-free environment. Track your WPM, accuracy, and progress over time. أداة مجانية للتدريب على الكتابة السريعة.",
+        "A calm, distraction-free place to practice typing. Pick a story worth reading and type it — no score, no timer, no test. أداة مجانية وهادئة للتدريب على الكتابة السريعة.",
     keywords: [
         "touch typing practice",
-        "typing speed test",
-        "WPM test",
         "typing practice online",
         "learn touch typing",
+        "typing trainer",
+        "distraction free typing",
         "تدريب كتابة",
         "كتابة سريعة",
         "تدرب على الكتابة",
         "IQD Wiki",
-        "typing tutor",
         "free typing practice",
     ],
     openGraph: {
         title: "Practice Touch Typing — IQD Wiki",
         description:
-            "Free online touch typing practice. Paste any article and start typing. Track WPM, accuracy & progress.",
+            "Pick a story worth reading and type it. No score, no timer, no test — just you and the keyboard.",
         url: "https://iqdwiki.com/practice-touch-typing",
         type: "website",
     },
@@ -28,7 +35,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Practice Touch Typing — IQD Wiki",
         description:
-            "Free online touch typing practice. Paste any article and start typing. Track WPM, accuracy & progress.",
+            "Pick a story worth reading and type it. No score, no timer, no test — just you and the keyboard.",
     },
     alternates: {
         canonical: "https://iqdwiki.com/practice-touch-typing",
@@ -40,5 +47,5 @@ export default function PracticeLayout({
 }: {
     children: React.ReactNode;
 }) {
-    return <>{children}</>;
+    return <div className={typingMono.variable}>{children}</div>;
 }

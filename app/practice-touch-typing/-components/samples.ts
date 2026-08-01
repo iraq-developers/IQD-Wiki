@@ -1,16 +1,21 @@
-export interface PresetSample {
+export interface Sample {
+    id: string;
     title: string;
-    content: string;
+    /** One line, shown on the card — sell the story, don't summarise it. */
+    hook: string;
+    text: string;
 }
 
 /**
- * Preset text samples users can click to start practicing instantly.
- * Replace the titles and content with your own examples.
+ * Things worth typing. Stories that are actually good to read while your
+ * fingers do the work, plus a couple of drills for the keys developers dodge.
  */
-export const PRESET_SAMPLES: PresetSample[] = [
+export const SAMPLES: Sample[] = [
     {
+        id: "linus",
         title: "Linus Torvalds",
-        content: `In 1969, in Helsinki, Finland, a boy named Linus Benedict Torvalds was born into a family of journalists. His grandfather owned one of the first computers in Finland, a Commodore VIC-20, and young Linus was immediately hooked. While other kids played outside, he sat in a small room typing commands into that machine, fascinated by the idea that he could tell a computer what to do and it would obey.
+        hook: "A shy student, a hobby project, and the kernel that ate the world.",
+        text: `In 1969, in Helsinki, Finland, a boy named Linus Benedict Torvalds was born into a family of journalists. His grandfather owned one of the first computers in Finland, a Commodore VIC-20, and young Linus was immediately hooked. While other kids played outside, he sat in a small room typing commands into that machine, fascinated by the idea that he could tell a computer what to do and it would obey.
 Linus was not a loud kid. He was not the type to raise his hand in class or lead a group project. He was shy, introverted, and mostly kept to himself. But he had something that most people underestimate: a deep and relentless curiosity. He did not just want to use computers. He wanted to understand them from the ground up, every layer, every instruction, every byte.
 When he enrolled at the University of Helsinki to study computer science, he discovered Unix, an operating system that was elegant and powerful but expensive and locked behind corporate licenses. Linus wanted something like Unix but free, something he could run on his own cheap PC at home. So at the age of twenty one, in a small apartment in Helsinki, he decided to build his own operating system kernel. Not because anyone asked him to. Not because he had a business plan. Simply because he wanted to learn how it worked.
 He posted a humble message on a Usenet group in August 1991. He wrote that he was working on a free operating system, just a hobby, nothing big and professional. He said it would probably never support anything other than his own hardware. That little hobby project became Linux.
@@ -30,8 +35,10 @@ You are building something too. Maybe it is a SaaS platform. Maybe it is a mobil
 The world does not reward the most talented. It rewards the most persistent. Keep your fingers on the home row. Keep your eyes on the screen. And keep building, one keystroke at a time.`,
     },
     {
-        title: "The $0 to $65 Billion Dream: Steve Jobs & Apple",
-        content: `In 1976, Steve Jobs was 21 years old, broke, and working out of his parents' garage at 2066 Crist Drive, Los Altos, California. He and Steve Wozniak had $1,300 between them. They sold a VW van and an HP-65 calculator to raise the money. Their plan? Build a computer that ordinary people (not just engineers) could use at home.
+        id: "jobs",
+        title: "Steve Jobs & Apple",
+        hook: "$1,300, a garage, a firing, and the most valuable company on earth.",
+        text: `In 1976, Steve Jobs was 21 years old, broke, and working out of his parents' garage at 2066 Crist Drive, Los Altos, California. He and Steve Wozniak had $1,300 between them. They sold a VW van and an HP-65 calculator to raise the money. Their plan? Build a computer that ordinary people (not just engineers) could use at home.
 The first Apple I sold for $666.66 each. They built 200 units by hand. It was a bare circuit board with no case, no keyboard, and no screen. Buyers had to supply their own. It was not glamorous. It was not polished. But it was a start, and that start changed everything.
 By 1980 (just 4 years later), Apple went public at $22 per share. The IPO raised $100 million and created over 300 millionaires overnight. It was the largest IPO since Ford Motor Company in 1956. Jobs was worth $256 million at the age of 25. The kid from the garage was now one of the richest people in America.
 But success did not protect him from failure. In 1985, Jobs was fired from his own company. The board of directors sided with CEO John Sculley in a power struggle, and Jobs was out. He was 30 years old. He had lost the company he built from nothing. Most people would have given up. Jobs did not.
@@ -47,8 +54,10 @@ Jobs once said something that stuck with a lot of people: "You can't connect the
 So keep typing. Keep building. Keep failing. The dots will connect.`,
     },
     {
-        title: "Code & Numbers: Developer's Warm-Up",
-        content: `This is not a story. This is a finger drill. Every character here is chosen to train the keys you use most as a developer. Slow down if you need to. Accuracy beats speed. Let's go.
+        id: "drill-code",
+        title: "Code & Numbers",
+        hook: "Brackets, regex, ports and semicolons — the keys everyone avoids.",
+        text: `This is not a story. This is a finger drill. Every character here is chosen to train the keys you use most as a developer. Slow down if you need to. Accuracy beats speed. Let's go.
 The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs. How vexingly quick daft zebras jump! The five boxing wizards jump quickly.
 Now let's hit the number row. Type these carefully: 1 2 3 4 5 6 7 8 9 0. Again: 10 20 30 40 50 60 70 80 90 100. Mix it up: 15 28 37 46 59 64 73 82 91 100. Bigger numbers: 128 256 512 1024 2048 4096 8192 16384 32768 65536. Common ports: 80 443 3000 3001 5173 5432 8080 8443 27017 6379.
 Symbols time. These are the keys most typists avoid, but developers use them constantly.
@@ -72,8 +81,10 @@ Final sprint! Type this as fast as you can while staying accurate: The 7 develop
 Great work. Your fingers are warmed up. Now go build something.`,
     },
     {
-        title: "From Poverty to Mars: Elon Musk's Impossible Bets",
-        content: `Elon Reeve Musk was born on June 28, 1971, in Pretoria, South Africa. His childhood was difficult. He was bullied severely at school. Once, a group of boys threw him down a flight of stairs and beat him until he blacked out. He spent 2 weeks in the hospital. His home life was not much better. He later described his father as a "terrible human being." Books and computers became his escape.
+        id: "musk",
+        title: "Impossible Bets",
+        hook: "Three rockets exploded. There was money left for exactly one more.",
+        text: `Elon Reeve Musk was born on June 28, 1971, in Pretoria, South Africa. His childhood was difficult. He was bullied severely at school. Once, a group of boys threw him down a flight of stairs and beat him until he blacked out. He spent 2 weeks in the hospital. His home life was not much better. He later described his father as a "terrible human being." Books and computers became his escape.
 At age 10, Musk got his first computer, a Commodore VIC-20 (the same model that hooked Linus Torvalds). He taught himself to code by reading the manual cover to cover. At age 12, he sold his first piece of software: a space-themed game called Blastar, for approximately $500. A 12-year-old, in 1983, selling code he wrote himself. That should tell you something about what is possible when curiosity meets determination.
 At 17, he left South Africa for Canada with almost nothing. He had about $2,000, a few belongings, and no real connections. He worked odd jobs: shoveling grain at $18/hour, cutting logs at a lumber mill, cleaning boilers at a lumber yard. He eventually transferred to the University of Pennsylvania, where he earned 2 degrees: one in economics (Wharton School) and one in physics.
 In 1995, at age 24, Musk and his brother Kimbal started Zip2, a city guide software company, with $28,000 from their father. They could not afford an apartment and slept in the office. They had 1 computer that ran the website during the day and compiled code at night. In 1999, Compaq bought Zip2 for $307 million. Musk's share: $22 million. He was 27.
@@ -94,8 +105,10 @@ The next time your code breaks at 2:00 AM, or your app crashes on launch day, or
 Keep typing. Keep building. Keep launching.`,
     },
     {
-        title: "The Internet in Numbers: A Data Story",
-        content: `This is a story told entirely in facts, figures, and data. It is the story of how the internet grew from a 4-node experiment to the largest network in human history. Every number here is real. Every stat is something worth knowing. And every character is something your fingers need to practice.
+        id: "internet",
+        title: "The Internet in Numbers",
+        hook: "From 4 computers and a 2-letter crash to 2 billion websites.",
+        text: `This is a story told entirely in facts, figures, and data. It is the story of how the internet grew from a 4-node experiment to the largest network in human history. Every number here is real. Every stat is something worth knowing. And every character is something your fingers need to practice.
 In 1969, ARPANET connected 4 computers. They were located at UCLA, Stanford Research Institute (SRI), UC Santa Barbara, and the University of Utah. The first message ever sent was "LO" (it was supposed to be "LOGIN" but the system crashed after 2 characters). Total bandwidth: roughly 50 kbps. Total users: about 40 researchers.
 By 1974, there were 62 nodes on ARPANET. Vint Cerf and Bob Kahn published the TCP/IP protocol that year. The paper was titled "A Protocol for Packet Network Intercommunication." It was 22 pages long and changed everything. The core ideas in that paper still power the internet you are using right now, 50+ years later.
 The Domain Name System (DNS) was introduced in 1984. Before that, every computer on the internet was identified only by its IP address (like 192.168.1.1 or 10.0.0.1). The first .com domain ever registered was symbolics.com on March 15, 1985. By the end of 1985, there were only 6 .com domains total. Today, there are over 350 million registered domain names across all extensions (.com, .net, .org, .io, .dev, .ai, etc.).
@@ -112,4 +125,146 @@ The internet consumes approximately 10% of the world's total electricity. Data c
 The bottom line? The internet started with 4 computers and a 2-letter crash. Today it connects 5.35 billion people, processes trillions of dollars in commerce, and generates 402.74 million terabytes of data every single day. Every one of those connections, every one of those transactions, every one of those bytes was made possible by people who sat at keyboards and typed.
 Just like you are doing right now. Keep going.`,
     },
+    {
+        id: "ada",
+        title: "Ada Lovelace",
+        hook: "She wrote software a century before anyone built a machine to run it.",
+        text: `Ada Lovelace was born in London in 1815. Her father was the poet Lord Byron, who left when she was one month old and never came back. Her mother, terrified that Ada would inherit her father's wild imagination, filled her days with mathematics instead of poetry. The plan backfired beautifully. Ada grew up with both.
+At seventeen she met Charles Babbage, an inventor who was building a mechanical calculating machine out of brass gears and cranks. Most people saw a very expensive adding machine. Ada saw something else entirely.
+In 1843 she translated an Italian article about Babbage's proposed Analytical Engine. Translation was considered suitable work for a woman of her position. So she translated it, and then she added her own notes at the end. The notes were three times longer than the article.
+Inside those notes, labelled simply Note G, is a step by step method for the machine to calculate a sequence of numbers called Bernoulli numbers. It has loops. It reuses intermediate results. It is, by any reasonable definition, a computer program, written for a computer that was never finished, roughly one hundred years before the first working machine existed.
+But the program is not even the most remarkable part. Babbage thought his engine would do arithmetic. Ada wrote that if you could represent something with symbols, the engine could operate on it, and that it might one day compose elaborate pieces of music. She understood, alone and in advance, that a computer is not a calculator. It is a machine for manipulating meaning. Everything you have ever done on a screen rests on that single insight.
+She also wrote the first honest warning about hype. The Analytical Engine, she said, has no pretensions to originate anything. It can do whatever we know how to order it to perform. People are still quoting that line in arguments about artificial intelligence today.
+Ada died at thirty six. Her notes sat in obscurity for a century until Alan Turing read them while working on the foundations of modern computing.
+There are two things worth keeping from her story. The first is that the most valuable contribution is often the part nobody assigned to you. She was asked to translate. She chose to think. The notes were extra, unrequested, and they are the reason we still say her name.
+The second is that being early looks exactly like being wrong, right up until it does not. Nobody could use her work. There was no machine. There was no industry, no job title, no community. She wrote it anyway, because she could see it, and seeing it clearly was enough of a reason.
+You are typing on the far end of that idea. Keep going.`,
+    },
+    {
+        id: "hopper",
+        title: "Grace Hopper",
+        hook: "They told her computers could only do arithmetic. She disagreed, loudly.",
+        text: `Grace Hopper joined the United States Navy in 1943, at the age of thirty seven. She was told she was too old and too small, and she went anyway. They assigned her to a project at Harvard, where she walked into a room and met the Mark I, a computer fifty one feet long, eight feet high, and full of switches, relays and rotating shafts.
+Nobody handed her a manual, because there was no manual. She wrote one. It ran to five hundred and sixty one pages, and it was the first programming manual for the first large scale automatic computer in the United States.
+In 1947, a team working on the Mark II found the machine failing and traced the fault to a moth caught in one of the relays. They taped the moth into the logbook with the note, first actual case of bug being found. Hopper loved the story and told it for decades, which is why every developer alive still says debugging.
+Her real revolution came later and was much harder to win. In the early 1950s, programs were written in raw machine code, in numbers. Hopper argued that people should be able to write instructions in something close to English, and that the computer itself should translate those instructions into numbers. She was told repeatedly that this was impossible, and that computers could only do arithmetic.
+She built it anyway. In 1952 she completed the A-0 compiler, the first program that took human readable code and produced machine code from it. Every compiler, interpreter, transpiler and build tool you have ever run is a descendant of that idea.
+She kept pushing. She led the work that became COBOL, a language written so that business people, not just mathematicians, could read what a program did. Decades later, COBOL still quietly runs a very large share of the world's banking and government systems.
+Hopper also carried a length of wire, about thirty centimetres long, which she handed to visitors. That, she explained, is a nanosecond, the distance light travels in a billionth of a second. It is why your program is slow when it talks to a machine on the other side of the country. She was teaching latency with a piece of wire in the 1960s.
+She retired from the Navy at seventy nine as a rear admiral, the oldest serving officer in the United States at the time.
+Her most quoted line is a good one to keep near your desk. The most damaging phrase in the language, she said, is, we have always done it this way.
+Somebody once told her that her idea was impossible. She had already written it. Keep typing.`,
+    },
+    {
+        id: "hamilton",
+        title: "The Code That Landed on the Moon",
+        hook: "Three minutes from the surface, the computer started throwing errors.",
+        text: `On the twentieth of July, 1969, the lunar module Eagle was falling toward the surface of the moon with two men inside it. At about three minutes from landing, the onboard computer began flashing an alarm code that nobody in the cabin recognised. Then it flashed another. The astronauts asked mission control what a 1202 alarm was, and whether they should abort.
+They did not abort. They landed, with roughly twenty five seconds of fuel remaining, because of software written by a team led by a young engineer named Margaret Hamilton.
+Hamilton had joined the Apollo project at MIT almost by accident. She had been working on weather prediction software, then on air defence systems, at a time when the phrase software engineering did not exist. She coined it herself, partly as a joke and partly as an argument, because the hardware people did not consider what she did to be engineering at all.
+The Apollo Guidance Computer had about seventy six kilobytes of memory. Your phone has more memory in a single frame of video. The programs were literally woven by hand into rope core memory, wire threaded through tiny magnetic rings, one bit at a time, by textile workers.
+Hamilton insisted on something the schedule pressure said was unnecessary. She wanted the software to detect when it was being asked to do more than it could handle, and to decide for itself what mattered most. Her team built priority scheduling and error recovery into the system, and they were told more than once that it was a waste of effort because astronauts are trained professionals who do not make mistakes.
+Three minutes from the moon, a rendezvous radar switch had been left in the wrong position, and the computer was being flooded with data it did not need. It was being asked to do more work than it had time for. Instead of freezing or crashing, it did exactly what Hamilton had designed it to do. It threw away the low priority tasks, reported what it had done with those alarm codes, and kept running the landing.
+The software did not fail. It reported that it was overloaded and then handled it.
+Hamilton had also fought earlier for a check that would prevent a crew from accidentally wiping the navigation data mid flight. She was overruled, because astronauts do not make mistakes. On Apollo 8, an astronaut made exactly that mistake, and the recovery took a frantic nine hours of work from her team.
+There is a famous photograph of Hamilton standing beside a stack of printouts of the Apollo code, and the stack is taller than she is.
+The lesson is not that she was clever, though she was. It is that she took the failure case seriously when nobody was rewarding her for it. Good engineering is mostly what happens when things go wrong.
+Write the error handling. Keep typing.`,
+    },
+    {
+        id: "ritchie",
+        title: "Dennis Ritchie",
+        hook: "The quietest man in computing built the floor everything else stands on.",
+        text: `In 1969, at Bell Labs in New Jersey, a research project called Multics was cancelled. Two of the engineers left on it, Ken Thompson and Dennis Ritchie, had grown fond of working on an interactive system and did not want to go back to punch cards. They found a discarded PDP-7 minicomputer in a corner and started building a small operating system on it, unofficially, without a budget.
+That system became Unix. To write it properly, Ritchie needed a language that was close enough to the machine to be fast but human enough to read. Between 1972 and 1973 he created C.
+It is difficult to overstate what happened next. Before C, operating systems were written in assembly language, which meant they were welded to one specific processor. Ritchie and Thompson rewrote Unix in C, and suddenly an operating system could be moved to different hardware by recompiling it. Software stopped being a prisoner of the machine it was born on.
+Today, C or its direct descendants are underneath essentially everything you touch. The Linux kernel is C. Windows and macOS are largely C and C++. Python's reference implementation is written in C. So is Ruby's, and PHP's, and the SQLite database that is running inside your phone right now. JavaScript engines are C++. The firmware in your microwave is probably C. Objective-C, C++, C#, Java, Go and Rust all borrowed their basic shape from it.
+Ritchie also co-wrote the book. The C Programming Language, by Kernighan and Ritchie, is about two hundred and seventy pages, and it taught a generation how to program. It is where hello, world comes from. It is still readable today, which is more than can be said for most technical books written half a century ago.
+He was famously understated about all of it. He described C as quirky, flawed, and an enormous success, which is one of the most honest sentences ever written about a piece of software.
+Ritchie died in October 2011, a week after Steve Jobs. The world barely noticed, which is its own kind of poetry. Jobs built the thing people could see. Ritchie built the thing it was standing on. The machine Jobs made his fortune with runs an operating system descended from Unix, written in Ritchie's language.
+There is a lesson in that for anyone building quietly. Most of the important work in any field is invisible, and the people who do it are usually not the people getting photographed. Infrastructure does not trend. It just holds.
+If you want to matter for fifty years, build the thing other people build on. Keep typing.`,
+    },
+    {
+        id: "python",
+        title: "Designing for Humans",
+        hook: "A holiday project, named after a comedy show, now taught in every school.",
+        text: `In December 1989, a Dutch programmer named Guido van Rossum had a quiet week off over Christmas and decided he needed a hobby project. He wanted a scripting language that was more capable than shell scripts but less punishing than C. He named it Python, not after the snake, but after Monty Python's Flying Circus, because he was in a good mood and the name made him laugh.
+The design choices he made in that week are why the language ended up everywhere.
+He made whitespace meaningful, so that badly indented code simply would not run. Programmers argued about this for twenty years. The result is that almost all Python code, from any author, in any country, looks roughly the same, and you can read a stranger's file without a fight.
+He made the syntax read like English. If a list is empty. For each item in items. It sounds obvious now. It was not obvious then, when the alternatives were full of braces, semicolons and type declarations that a beginner had to memorise before printing a single word.
+He kept the language small enough to hold in your head, and pushed the complexity into libraries instead.
+The philosophy was eventually written down as a short poem that ships inside the language itself. Type import this in a Python prompt and you get it. Beautiful is better than ugly. Explicit is better than implicit. Simple is better than complex. Readability counts. There should be one, and preferably only one, obvious way to do it.
+Notice what those lines are about. Not speed. Not power. Not cleverness. They are all about the human being who has to read the code six months later, and that person is usually you.
+The payoff took decades and then arrived all at once. Scientists picked up Python because they wanted to do work, not fight a compiler. That brought NumPy, then pandas, then scikit-learn, then TensorFlow and PyTorch. Nearly the entire modern machine learning field is built in a language designed by one man on a Christmas break to be easy to read.
+Van Rossum spent years as what the community called the Benevolent Dictator For Life, settling arguments about the language's direction, until he stepped down in 2018 after one debate became too exhausting. He described the role honestly, as unglamorous work that mostly involved saying no.
+The lesson is not about Python. It is that optimising for the reader is a superpower with a very long fuse. Clever code wins the afternoon. Clear code wins the decade.
+Write it so the next person understands it. Keep typing.`,
+    },
+    {
+        id: "wikipedia",
+        title: "The Encyclopedia Anyone Could Break",
+        hook: "Every expert said an encyclopedia strangers could edit would be worthless.",
+        text: `In January 2001, a project called Nupedia was in trouble. It was an attempt to build a free online encyclopedia, written by credentialed experts and pushed through a seven stage peer review process. It was rigorous, it was serious, and after a full year of work it had produced about twenty one articles.
+Someone suggested a side experiment. Put up a wiki, a kind of website where any visitor can edit any page directly in the browser, and use it as a rough drafting space to feed the real encyclopedia. Several of the experts objected to being associated with something so undignified. The side experiment was given its own domain to keep it away from the main project.
+In its first month, that side experiment produced more articles than Nupedia had in a year. Within a year it had twenty thousand. Nupedia was quietly shut down in 2003. The scratchpad had become Wikipedia.
+Every reasonable person predicted it would fail. If anyone can edit anything, vandals will win, and the whole thing will collapse into graffiti and nonsense. It was an obvious argument, and it was wrong for a subtle reason. Destroying a page takes one person a few seconds. Repairing it also takes a few seconds, and there are far more people who want the page to exist than people who want it gone. The maths of good faith works out, as long as fixing is as easy as breaking.
+Today Wikipedia holds more than sixty million articles across roughly three hundred languages. It is consistently among the ten most visited websites in the world. It carries no advertising, sells no data, and is written and maintained by volunteers who receive nothing for it except the knowledge that the article is now better than it was.
+Studies comparing its science articles to traditional encyclopedias have repeatedly found error rates in the same range. Not perfect. Comparable. Built by strangers, for free, in public.
+There are real problems. Coverage is uneven, and it leans heavily toward the languages and subjects of the people who happen to have time to write. Arabic Wikipedia, serving hundreds of millions of speakers, has a fraction of the depth of the English one. That gap is not a law of nature. It is just work nobody has done yet.
+Which is the actual lesson. The thing you keep waiting for someone qualified to build is usually waiting for someone stubborn instead. The person who writes the missing article is rarely the world expert. It is the person who noticed it was missing and had an evening free.
+Something is missing in your language, in your field, in your city. Go and write it. Keep typing.`,
+    },
+    {
+        id: "miyamoto",
+        title: "The Man Who Made Play a Career",
+        hook: "A failed art student with no game experience was handed a doomed arcade cabinet.",
+        text: `Shigeru Miyamoto grew up in rural Japan in the 1950s, in a house with no television and no money for toys. He spent his childhood walking through fields and forests near Kyoto. One day he found the entrance to a cave, went back with a lantern, and crawled inside. He never forgot that feeling: no map, no instructions, just a dark opening and the decision to go in.
+He studied industrial design, drew a lot, played the banjo, and graduated without much of a plan. His father knew someone at a playing card company called Nintendo, and in 1977 Miyamoto talked his way into a job designing artwork for the cabinets of arcade machines.
+In 1980 Nintendo had a disaster. They had shipped thousands of an arcade game called Radar Scope to America and almost nobody wanted it. The warehouses were full of unsold cabinets. The company needed a new game that could be loaded onto the existing hardware to rescue the inventory, and every experienced designer was busy. So the job went to the young artist who had never designed a game in his life.
+Miyamoto did something nobody in arcades was doing. He started with a story rather than a mechanic. A carpenter, his girlfriend, and an ape that has taken her to the top of a construction site. He gave the character a hat because hair was hard to animate, and a moustache because a mouth was hard to draw at that resolution, and overalls so you could see his arms move. The technical limits designed the most recognisable character in video game history.
+The game was Donkey Kong. It made Nintendo about one hundred and eighty million dollars and saved the American branch of the company. The carpenter was later renamed Mario.
+What came next mattered more. Super Mario Bros. taught players how to play without a single line of instruction: an open space, an enemy walking toward you, a block above your head, and the discovery that jumping solves all three. Then he built The Legend of Zelda, which was that cave from his childhood turned into a world, an open landscape handed to you with no directions and the expectation that curiosity would be enough.
+His method never really changed. He is known for pulling a nearly finished game apart if it is not fun, on the grounds that a delayed game is eventually good but a bad game is bad forever. He has said his job is not to make games. It is to find the fun and then build the game around it.
+That is a strange and useful way to look at your own work. Not what feature should I add, but where is the part that people actually enjoy, and how do I get more of that.
+Find the fun. Then build around it. Keep typing.`,
+    },
+    {
+        id: "drill-basics",
+        title: "Home Row Warm-Up",
+        hook: "Short. Every finger, every letter, no story to get lost in.",
+        text: `Fingers on the home row. Left hand on a s d f, right hand on j k l and the semicolon. Both thumbs resting on the space bar. Do not look down. If you lose your place, feel for the two small bumps on f and j and start again.
+asdf jkl; asdf jkl; fjfj dkdk slsl a;a; fjdk sla; fjdk sla;
+Now the index fingers reach: fgfg jhjh fgfg jhjh gfgf hjhj frf juj ftf jyj
+The middle fingers go up and down: ded kik ded kik dcd k,k ded kik
+The ring fingers: sws lol sws lol sxs l.l sws lol
+The little fingers, the weakest ones, need the most work: aqa ;p; aza ;/; aqa ;p; aqa ;p;
+Words now, slowly, all from the home row: a lad had a flask. dad falls. all a lass asks. a glass fell. half a salad. flash a flag.
+Add the top row: we type quiet words to test our hands. the outer keys prefer a lighter touch.
+Add the bottom row: an example of common back and forth movement between rows.
+Full sentences. Do not chase speed. Speed is what accuracy turns into on its own.
+The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs. How vexingly quick daft zebras jump. The five boxing wizards jump quickly at dawn. Sphinx of black quartz, judge my vow. Jackdaws love my big sphinx of quartz.
+Capitals, using the opposite shift key each time: Amman. Baghdad. Cairo. Damascus. Erbil. Fallujah. Gaza. Hilla. Istanbul. Jeddah. Karbala. Latakia. Mosul. Najaf. Oman. Petra. Qatar. Riyadh. Samarra. Tunis. Ur. Van. Wasit. Xanthos. Yemen. Zakho.
+Punctuation, lightly: Yes, of course. No, not today. Wait, why? Stop! Fine; carry on. Ready: begin.
+Last pass. Relax your shoulders, keep your wrists floating, and let the rhythm stay even. Even beats fast. Even becomes fast.
+Well done. Your hands are awake now.`,
+    },
 ];
+
+/** Roughly how big a piece is, without putting a stopwatch anywhere near it. */
+export function sizeOf(sample: Sample): "short" | "medium" | "long" {
+    if (sample.text.length < 1800) return "short";
+    if (sample.text.length < 4200) return "medium";
+    return "long";
+}
+
+export function nextSampleAfter(id: string): Sample | null {
+    const i = SAMPLES.findIndex((s) => s.id === id);
+    if (i === -1) return null;
+    return SAMPLES[(i + 1) % SAMPLES.length];
+}
+
+export function randomSample(exclude?: string): Sample {
+    const pool = SAMPLES.filter((s) => s.id !== exclude);
+    return pool[Math.floor(Math.random() * pool.length)];
+}
