@@ -1,4 +1,5 @@
-import { uid, makeBullet, makeLink, type CVData } from "./types";
+import { uid, makeBullet, makeLink, makeSimple, makeSkill, DEFAULT_SECTIONS, type CVData } from "./types";
+import { emptyCV } from "./cv-schema";
 
 /* ══════════════════════════════════════════════════════
    DEFAULT CV DATA
@@ -19,10 +20,10 @@ export function mkInitial(): CVData {
             "Experienced software engineer with 5+ years of expertise in building scalable web applications and distributed systems. Passionate about clean code, agile methodologies, and delivering high-quality user experiences.",
         skillsTitle: "Skills & Technologies",
         skills: [
-            { id: uid(), label: "Frontend", value: "React, Vue.js, TypeScript, TailwindCSS, HTML5, CSS3" },
-            { id: uid(), label: "Backend", value: "Node.js, Python, PostgreSQL, MongoDB, REST APIs, GraphQL" },
-            { id: uid(), label: "DevOps", value: "Docker, Kubernetes, AWS, CI/CD, GitHub Actions" },
-            { id: uid(), label: "Tools", value: "Git, VS Code, Jira, Figma" },
+            makeSkill("Frontend", "React, Vue.js, TypeScript, TailwindCSS, HTML5, CSS3"),
+            makeSkill("Backend", "Node.js, Python, PostgreSQL, MongoDB, REST APIs, GraphQL"),
+            makeSkill("DevOps", "Docker, Kubernetes, AWS, CI/CD, GitHub Actions"),
+            makeSkill("Tools", "Git, VS Code, Jira, Figma"),
         ],
         expTitle: "Work Experience",
         jobs: [
@@ -80,12 +81,18 @@ export function mkInitial(): CVData {
         ],
         eduTitle: "Education",
         education: [
-            { id: uid(), text: "Bachelor of Science in Computer Science from State University (2015 – 2019)" },
+            makeSimple("Bachelor of Science in Computer Science from State University (2015 – 2019)"),
         ],
         langTitle: "Languages",
         languages: [
-            { id: uid(), text: "English (Native)" },
-            { id: uid(), text: "Spanish (Conversational)" },
+            makeSimple("English (Native)"),
+            makeSimple("Spanish (Conversational)"),
         ],
+        sections: DEFAULT_SECTIONS.map(s => ({ ...s })),
     };
+}
+
+/* ── A blank CV, for "start from scratch" ── */
+export function mkEmpty(): CVData {
+    return emptyCV();
 }

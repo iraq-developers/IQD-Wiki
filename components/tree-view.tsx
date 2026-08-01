@@ -45,6 +45,9 @@ type TreeRenderItemParams = {
 type TreeProps = React.HTMLAttributes<HTMLDivElement> & {
     data: TreeDataItem[] | TreeDataItem
     initialSelectedItemId?: string
+    /** Pass to make selection controlled — keeps the tree in sync with
+     *  selections made outside it (list views, deletions, deep links). */
+    selectedItemId?: string
     onSelectChange?: (item: TreeDataItem | undefined) => void
     expandAll?: boolean
     defaultNodeIcon?: React.ComponentType<{ className?: string }>
@@ -58,6 +61,7 @@ const TreeView = React.forwardRef<HTMLDivElement, TreeProps>(
         {
             data,
             initialSelectedItemId,
+            selectedItemId: controlledSelectedItemId,
             onSelectChange,
             expandAll,
             defaultLeafIcon,
@@ -69,15 +73,22 @@ const TreeView = React.forwardRef<HTMLDivElement, TreeProps>(
         },
         ref
     ) => {
-        const [selectedItemId, setSelectedItemId] = React.useState<
+        const [uncontrolledSelectedItemId, setUncontrolledSelectedItemId] = React.useState<
             string | undefined
         >(initialSelectedItemId)
+
+        // When `selectedItemId` is supplied the tree is fully controlled, so
+        // selecting an item elsewhere in the UI keeps the highlight in sync.
+        const isControlled = controlledSelectedItemId !== undefined
+        const selectedItemId = isControlled
+            ? controlledSelectedItemId
+            : uncontrolledSelectedItemId
 
         const [draggedItem, setDraggedItem] = React.useState<TreeDataItem | null>(null)
 
         const handleSelectChange = React.useCallback(
             (item: TreeDataItem | undefined) => {
-                setSelectedItemId(item?.id)
+                setUncontrolledSelectedItemId(item?.id)
                 if (onSelectChange) {
                     onSelectChange(item)
                 }
@@ -265,6 +276,15 @@ const TreeNode = ({
     const isSelected = selectedItemId === item.id
     const isOpen = value.includes(item.id)
 
+    // Expand automatically when one of this node's children gets selected
+    // from outside the tree (e.g. a list view or a deletion fallback).
+    React.useEffect(() => {
+        if (!selectedItemId || isOpen) return
+        if (item.children?.some((child) => child.id === selectedItemId)) {
+            setValue([item.id])
+        }
+    }, [selectedItemId, isOpen, item.id, item.children])
+
     const onDragStart = (e: React.DragEvent) => {
         if (!item.draggable) {
             e.preventDefault()
@@ -332,7 +352,7 @@ const TreeNode = ({
                                 isOpen={isOpen}
                                 default={defaultNodeIcon}
                             />
-                            <span className="text-sm truncate">{item.name}</span>
+                            <span className="min-w-0 flex-1 text-sm truncate">{item.name}</span>
                             <TreeActions isSelected={isSelected}>
                                 {item.actions}
                             </TreeActions>
@@ -461,7 +481,7 @@ const TreeLeaf = React.forwardRef<
                             isSelected={isSelected}
                             default={defaultLeafIcon}
                         />
-                        <span className="flex-grow text-sm truncate">{item.name}</span>
+                        <span className="min-w-0 flex-grow text-sm truncate">{item.name}</span>
                         <TreeActions isSelected={isSelected && !item.disabled}>
                             {item.actions}
                         </TreeActions>
