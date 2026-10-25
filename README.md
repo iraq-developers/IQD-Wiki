@@ -97,6 +97,16 @@ Supports `youtube.com/watch`, `youtu.be`, and `youtube.com/shorts` links.
 
 ---
 
+### 🏆 Hackathons & Events (Sanity)
+
+The [`/hackathons`](https://iqdwiki.com/hackathons) page lists hackathons, meetups, workshops and conferences in Iraq. Events are stored in [Sanity](https://www.sanity.io), not in `content/`.
+
+- **Add or edit events:** open [`/studio`](https://iqdwiki.com/studio), log in, and create a new **الفعاليات** document. It shows on the site within ~5 minutes.
+- **Setup (maintainers):** create a project at [sanity.io/manage](https://www.sanity.io/manage), copy `.env.example` to `.env.local`, and fill in `NEXT_PUBLIC_SANITY_PROJECT_ID` / `NEXT_PUBLIC_SANITY_DATASET` (also in the hosting env vars). In the Sanity project's **API → CORS origins**, add `http://localhost:3000` and `https://iqdwiki.com` with credentials allowed.
+- The schema lives in `sanity/schemaTypes/event.ts`. Without the env vars the site still builds and the page shows an empty state.
+
+---
+
 ### ⚡ Automatic Updates
 
 When you make a change, the website at **[https://iqdwiki.com/](https://iqdwiki.com/)** will be updated automatically in few seconds.

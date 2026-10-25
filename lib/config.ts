@@ -2,6 +2,7 @@ import {
   Code,
   ShieldCheck,
   Globe,
+  Trophy,
   LucideIcon,
 } from "lucide-react";
 
@@ -26,5 +27,10 @@ export const sidebarNavItems: NavItem[] = [
     title: "أساسيات البرمجة",
     href: "/fund-programming",
     icon: Code,
+  },
+  {
+    title: "الهاكاثونات والفعاليات",
+    href: "/hackathons",
+    icon: Trophy,
   },
 ];
